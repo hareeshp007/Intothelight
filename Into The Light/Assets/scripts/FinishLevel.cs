@@ -9,13 +9,11 @@ public class FinishLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
        
-            if (collision.gameObject.GetComponent<PlayerController>())
+            if (collision.gameObject.GetComponent<PlayerView>()!=null)
             {
-                PlayerController playerController = (PlayerController)collision.gameObject.GetComponent<PlayerController>();
-                playerController.LevelCompleted();
+                PlayerView playerView = (PlayerView)collision.gameObject.GetComponent<PlayerView>();
+                playerView.LevelCompleted();
                 Debug.Log("Level Completed");
-                
-            }
-        
+        }
     }
 }

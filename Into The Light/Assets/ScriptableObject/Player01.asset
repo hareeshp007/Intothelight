@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881b8e0f8ee3ba34781a918e3d9bf08a, type: 3}
+  m_Name: Player01
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  speed: 5
+  JumpForce: 10
+  MaxExtraJumps: 1
+  healthDraining: 0.3
+  healthGaining: 0.4
+  player: {fileID: 8655319727207801912, guid: 92b18b814f12f16409162c87262a8984, type: 3}
