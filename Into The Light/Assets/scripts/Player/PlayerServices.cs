@@ -29,5 +29,6 @@ public class PlayerServices : MonoSingletonGeneric<PlayerServices>
     private void SetHealthBar()
     {
         playerView.SetHealthBar(HealthBar);
+        Debug.Log("HealthController connected");
     }
 }

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1455674211323502962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.537, z: 0}
+  m_LocalPosition: {x: -0.0146, y: -0.1602, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -180,7 +180,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017714307, y: -0.06360631}
+  m_Offset: {x: -0.010417443, y: -0.05938179}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -191,7 +191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18797937, y: 0.19778165}
+  m_Size: {x: 0.11654671, y: 0.18933262}
   m_EdgeRadius: 0
 --- !u!114 &8655319727207801912
 MonoBehaviour:
@@ -212,7 +212,6 @@ MonoBehaviour:
     m_Bits: 64
   Animator: {fileID: 7531574750458628634}
   healthBarController: {fileID: 0}
-  levelManager: {fileID: 0}
   MoveInput: 0
   isGrounded: 0
   IsHealPossible: 0

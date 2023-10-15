@@ -11,6 +11,7 @@ public class PlayerController
 
     public PlayerController(PlayerSO playerSO,PlayerView playerView)
     {
+        
         CreatePlayer(playerSO,playerView);
     }
 
@@ -18,6 +19,9 @@ public class PlayerController
     {
         _playerView = playerView;
         _playerModel = new PlayerModel(this,playerSO);
+        _playerView.SetController(this);
+        Debug.Log("MVC connected");
+        Debug.Log("health" + _playerModel.CurrentHealth + " Drain:" + _playerModel.healthDraining);
     }
     public float TakeDamage(int damage)
     {
@@ -32,16 +36,20 @@ public class PlayerController
 
     public void HealthDraining()
     {
-        float health = _playerModel.CurrentHealth;
         float Drain = _playerModel.healthDraining;
-        _playerModel.CurrentHealth = health - Drain;
+        _playerModel.CurrentHealth -= Drain;
     }
 
     public void HealUnderTheLight()
     {
-        float health = _playerModel.CurrentHealth;
+        float Maxhealth = _playerModel.MaxHealth;
+        float Health = _playerModel.CurrentHealth;
         float Gain = _playerModel.healthGaining;
-        _playerModel.CurrentHealth = health + Gain;
+        if (Health < Maxhealth)
+        {
+            _playerModel.CurrentHealth += Gain;
+        }
+        
     }
 
     public int GetCurrentExtraJumps()

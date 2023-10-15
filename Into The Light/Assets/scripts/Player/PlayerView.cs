@@ -13,7 +13,6 @@ public class PlayerView : MonoBehaviour
     
 
     public HealthBarController healthBarController;
-    public LevelManager levelManager;
 
     [SerializeField]
     private float MoveInput;
@@ -34,15 +33,10 @@ public class PlayerView : MonoBehaviour
     public void SetController(PlayerController playerController)
     {
         controller = playerController;
-        ControllerSet();
+
     }
 
-    private void ControllerSet()
-    {
-        int MaxExtraJumps = controller.GetCurrentExtraJumps();
-        float MaxHealth = controller.GetCurrentHealth();
-        healthBarController.SetMaxHealth(MaxHealth);
-    }
+    
 
     private void Awake()
     {
@@ -60,17 +54,29 @@ public class PlayerView : MonoBehaviour
     private void Update()
     {
         Jump();
-        Heal();
-        TakeDamage();
-    }
-
-    private void TakeDamage()
-    {
         
         if (IsOutOfLight)
         {
-            controller.HealthDraining();
+            TakeDamage();
         }
+        else
+        {
+            Heal();
+        }
+        
+    }
+
+    private void TakeDamage()
+    { 
+        if (IsOutOfLight)
+        {
+            Debug.Log("health Drainging");
+            controller.HealthDraining();
+            UpdateHealth();
+        }
+    }
+    private void UpdateHealth()
+    {
         float CurrentHealth = controller.GetCurrentHealth();
         healthBarController.SetHealth(CurrentHealth);
         if (CurrentHealth < 0)
@@ -81,36 +87,43 @@ public class PlayerView : MonoBehaviour
 
     private void Heal()
     {
-        if (IsHealPossible)
-        {
-            controller.HealUnderTheLight();
-        }
-        float CurrentHealth = controller.GetCurrentHealth();
-        healthBarController.SetHealth(CurrentHealth);
+        Debug.Log("Healing");
+        controller.HealUnderTheLight();
+        UpdateHealth();
     }
 
    
 
     private void Jump()
     {
+        
         int CurrentExtraJumps = controller.GetCurrentExtraJumps();
         float jumpForce = controller.GetJumpForce();
         if (isGrounded)
         {
+            
+            Animator.SetBool("isFalling", false);
             controller.SetJumpsOnGround();
         }
-        if (Input.GetKeyDown(KeyCode.W) && CurrentExtraJumps > 0)
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            rb.velocity = Vector2.up * controller.GetJumpForce();
-            controller.SetJumps();
+            Animator.SetBool("IsJumping", true);
+            if (CurrentExtraJumps > 0)
+            {
+                
+                rb.velocity = Vector2.up * controller.GetJumpForce();
+                controller.SetJumps();
+            }
+            else if (CurrentExtraJumps == 0 && isGrounded)
+            {
+                Animator.SetBool("isFalling", false);
+                rb.velocity = Vector2.up * jumpForce;
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.W) && CurrentExtraJumps == 0 && isGrounded)
-        {
-            Animator.SetBool("isJumping", true);
-            rb.velocity = Vector2.up * jumpForce;
-        }
+        
         if (rb.velocity.y < 0)
         {
+            Animator.SetBool("IsJumping", false);
             Animator.SetBool("isFalling", true);
         }
     }
@@ -118,17 +131,15 @@ public class PlayerView : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(GroundCheck.position, CheckRadius, GroundLayerMask);
+        Animator.SetBool("OnGround", isGrounded);
         movement();
+        
     }
     private void movement()
     {
         float speed = controller.GetSpeed();
         MoveInput = Input.GetAxisRaw("Horizontal");
-        if (MoveInput != 0)
-        {
-            Animator.SetFloat("speed", Mathf.Abs(MoveInput));
-        }
-        
+        Animator.SetFloat("speed", Mathf.Abs(MoveInput));
         rb.velocity = new Vector2(MoveInput * speed, rb.velocity.y);
         if (!faceingRight && MoveInput > 0)
         {
@@ -148,32 +159,37 @@ public class PlayerView : MonoBehaviour
     }
     public void AddHealth()
     {
-        IsHealPossible = true;
         IsOutOfLight = false;
     }
 
     public void DecHealth()
     {
-        IsHealPossible = false;
         IsOutOfLight = true;
     }
     public void Death()
     {
-        SoundController.Instance.Play(Sounds.PlayerDied);
+        Animator.SetBool("IsAlive", false);
+        //SoundController.Instance.Play(Sounds.PlayerDied);
         Debug.Log("Player has Died");
-        levelManager.GameOver();
+    }
+
+    private void playerDeath( )
+    {
         this.gameObject.SetActive(false);
     }
 
     public void LevelCompleted()
     {
-        SoundController.Instance.Play(Sounds.LevelFinished);
-        levelManager.GameWon();
+        //SoundController.Instance.Play(Sounds.LevelFinished);
         this.enabled = false;
     }
 
     public void SetHealthBar(HealthBarController healthBar)
     {
+        int MaxExtraJumps = controller.GetCurrentExtraJumps();
+        float MaxHealth = controller.GetCurrentHealth();
         healthBarController = healthBar;
+        healthBarController.SetMaxHealth(MaxHealth);
+        Debug.Log(MaxHealth);
     }
 }

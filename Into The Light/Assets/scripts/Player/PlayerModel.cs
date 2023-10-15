@@ -1,6 +1,7 @@
 
 using IntoTheLight.Player;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class PlayerModel 
 {
@@ -21,6 +22,7 @@ public class PlayerModel
     }
     public void SetModel( PlayerSO playerSO)
     {
+        
         MaxHealth = playerSO.MaxHealth;
         CurrentHealth = MaxHealth;
         speed = playerSO.speed;
