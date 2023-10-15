@@ -1,7 +1,6 @@
 
 using IntoTheLight.Player;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 public class PlayerModel 
 {

@@ -8,31 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Lobby.unity
     guid: af223d9c2b9a24d468457a7f36141c91
-  - enabled: 0
-    path: Assets/Scenes/Level 1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/Level 2.unity
-    guid: db3e39dbf06713243b76606ba09a72b6
-  - enabled: 0
-    path: Assets/Scenes/Level 3.unity
-    guid: b69221be890880b48b5a5e8cf991f3ae
-  - enabled: 0
-    path: Assets/Scenes/Level 4.unity
-    guid: cf3c5aff7877a9944ae909aaf962954b
-  - enabled: 0
-    path: Assets/Scenes/Level 5.unity
-    guid: a291bc403738ca84495f7498f0dd1e8d
   - enabled: 1
-    path: Assets/Scenes/Trials/Trial.unity
+    path: Assets/Scenes/Levels/Level 1.unity
     guid: a29545b5ba779d4479c399cff758d206
   - enabled: 1
-    path: Assets/Scenes/Trials/Trial 1.unity
-    guid: 11bb7afc6f6908f4abd1a407bf282318
+    path: Assets/Scenes/Levels/Level 2.unity
+    guid: 56251e17e07ec5641bbdff5c9f9ba115
   - enabled: 1
-    path: Assets/Scenes/Trials/Trial 2.unity
-    guid: b58475ce71a3a5847a9c9670fefbf0e9
+    path: Assets/Scenes/Levels/Level 3.unity
+    guid: 1c1541b96729ad149835e9c9f1200ea1
   - enabled: 1
-    path: Assets/Scenes/Trials/Trial 3.unity
-    guid: 00f7fbfc37f4e364cba77778997a5056
+    path: Assets/Scenes/Levels/Level 4.unity
+    guid: eecf08a4249fdf34dbd87a7ca97171b0
   m_configObjects: {}

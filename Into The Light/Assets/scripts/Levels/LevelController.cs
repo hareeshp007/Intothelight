@@ -1,29 +1,16 @@
-using System.Collections;
+using IntoTheLight.Utilities;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelController : MonoBehaviour
+public class LevelController : MonoSingletonGeneric<LevelController>
 {
-    private static LevelController instance;
-    public static LevelController Instance { get; private set; }
+    
     public string LobbyScene = "Lobby";
 
     public GameObject LevelMenu;
-    private int lastsceneint=5;
-
-    private void Start()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    public List<string> Levels;
+    private int lastsceneint=4;
     public void LoadScene(int scenenumber)
     {
         SoundController.Instance.Play(Sounds.ButtonClick);
@@ -49,15 +36,17 @@ public class LevelController : MonoBehaviour
     public void LoadNextScene()
     {
         SoundController.Instance.Play(Sounds.ButtonClick);
+        
         int currScene = SceneManager.GetActiveScene().buildIndex;
-        if (currScene == lastsceneint)
-        {
-            SceneManager.LoadScene(LobbyScene);
-        }
-        else
+        if (currScene < Levels.Count)
         {
             SceneManager.LoadScene(currScene + 1);
         }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+       
 
     }
     public void LoadLobbyScene()

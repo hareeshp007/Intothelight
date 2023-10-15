@@ -1,8 +1,7 @@
 using IntoTheLight.Player;
 using IntoTheLight.Utilities;
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerServices : MonoSingletonGeneric<PlayerServices>
