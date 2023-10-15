@@ -137,7 +137,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1955be23dd6d43e4e981d291c82e7eb0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -146,7 +146,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &9178695504666111728
 BoxCollider2D:
@@ -215,8 +215,9 @@ MonoBehaviour:
   MoveInput: 0
   isGrounded: 0
   IsHealPossible: 0
-  IsOutOfLight: 0
+  IsOutOfLight: 1
   faceingRight: 1
+  levelManager: {fileID: 0}
   rb: {fileID: 0}
 --- !u!95 &7531574750458628634
 Animator:

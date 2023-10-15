@@ -7,7 +7,8 @@ using UnityEngine;
 
 public class PlayerServices : MonoSingletonGeneric<PlayerServices>
 {
-    public HealthBarController HealthBar;
+    private HealthBarController HealthBar;
+    private LevelManager levelManager;
     public PlayerSO playerSO;
     [SerializeField]
     private PlayerView playerView;
@@ -15,20 +16,54 @@ public class PlayerServices : MonoSingletonGeneric<PlayerServices>
     private PlayerController playerController;
     [SerializeField]
     private PlayerModel playerModel;
-    private void Start()
+    private void Awake()
     {
+        base.Awake();
+        Debug.Log("Awake");
         CreatePlayer();
     }
 
     private void CreatePlayer()
     {
-        playerView = GameObject.Instantiate<PlayerView>(playerSO.player);
-        playerController = new PlayerController(playerSO,playerView);
-        SetHealthBar();
+        if (playerView == null)
+        {
+            this.playerView = GameObject.Instantiate<PlayerView>(playerSO.player);
+        }
+        this.playerController = new PlayerController(playerSO,playerView);
+        SetPlayer();
     }
-    private void SetHealthBar()
+    private void SetPlayer()
     {
-        playerView.SetHealthBar(HealthBar);
+        if (HealthBar != null)
+        {
+            playerView.SetHealthBar(HealthBar);
+        }
+        if(levelManager != null)
+        {
+            playerView.SetLevelManager(levelManager);
+        }
+        
         Debug.Log("HealthController connected");
+    }
+    public void SetLevelManager(LevelManager _levelManager)
+    {
+        levelManager = _levelManager;
+        CheckPlayer();
+    }
+    public void SetHealthBar(HealthBarController healthBarController)
+    {
+        HealthBar = healthBarController;
+        CheckPlayer();
+    }
+    private void CheckPlayer()
+    {
+        if (playerView != null)
+        {
+            SetPlayer();
+        }
+    }
+    public void SetPlayer(PlayerView _playerView)
+    {
+        playerView= _playerView;
     }
 }

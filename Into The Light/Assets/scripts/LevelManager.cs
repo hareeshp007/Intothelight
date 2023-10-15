@@ -1,3 +1,4 @@
+using IntoTheLight.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,14 @@ public class LevelManager : MonoBehaviour
     public GameObject PauseScreen;
     public GameObject GameOverScreen;
     public GameObject GameWonScreen;
-
-    public string LobbyScene="Lobby";
-    public int lastsceneint;
-
+    [SerializeField]
+    private const string LobbyScene = "Lobby";
+    [SerializeField]
+    private int lastsceneint;
+    private void Start()
+    {
+        PlayerServices.Instance.SetLevelManager(this);
+    }
     public void pause()
     {
         SoundController.Instance.Play(Sounds.ButtonClick);
@@ -43,7 +48,6 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadNextScene()
     {
-        
         int currScene = SceneManager.GetActiveScene().buildIndex;
         if (currScene == lastsceneint)
         {
@@ -57,7 +61,6 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadLobbyScene()
     {
-        
         SceneManager.LoadScene(LobbyScene);
     }
 }

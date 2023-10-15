@@ -9,7 +9,10 @@ public class HealthBarController : MonoBehaviour
     public Slider HealthBarSlider;
     public Gradient HealthGradient;
     public Image fill;
-
+    private void Start()
+    {
+        PlayerServices.Instance.SetHealthBar(this);
+    }
     public void SetMaxHealth(float MaxHealth)
     {
         HealthBarSlider.maxValue = MaxHealth;

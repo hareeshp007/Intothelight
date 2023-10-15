@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   speed: 5
-  JumpForce: 10
+  JumpForce: 7
   MaxExtraJumps: 1
   healthDraining: 0.01
   healthGaining: 0.1

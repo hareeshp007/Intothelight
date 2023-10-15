@@ -24,6 +24,8 @@ public class PlayerView : MonoBehaviour
     private bool IsOutOfLight;
     [SerializeField]
     private bool faceingRight = true;
+    [SerializeField]
+    private LevelManager levelManager;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -44,6 +46,7 @@ public class PlayerView : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+        PlayerServices.Instance.SetPlayer(this);
     }
     // Start is called before the first frame update
     void Start()
@@ -175,11 +178,13 @@ public class PlayerView : MonoBehaviour
 
     private void playerDeath( )
     {
+        levelManager.GameOver();
         this.gameObject.SetActive(false);
     }
 
     public void LevelCompleted()
     {
+        levelManager.GameWon(); 
         //SoundController.Instance.Play(Sounds.LevelFinished);
         this.enabled = false;
     }
@@ -191,5 +196,9 @@ public class PlayerView : MonoBehaviour
         healthBarController = healthBar;
         healthBarController.SetMaxHealth(MaxHealth);
         Debug.Log(MaxHealth);
+    }
+    public void SetLevelManager(LevelManager _levelManager)
+    {
+        levelManager= _levelManager;
     }
 }

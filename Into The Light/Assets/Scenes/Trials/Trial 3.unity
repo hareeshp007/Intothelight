@@ -423,6 +423,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7178778858246859715, guid: 0614462b36544ea4c8cc1d9163a2cd25, type: 3}
   m_PrefabInstance: {fileID: 2002508190}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &338494113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6933893240888943005, guid: 0614462b36544ea4c8cc1d9163a2cd25, type: 3}
+  m_PrefabInstance: {fileID: 2002508190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81495ed7850f3ac4680850f562d48df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &361284979
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,8 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09d587ec663da84aae360bcf1253dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 0}
-  levelManager: {fileID: 0}
+  HealthBar: {fileID: 338494113}
   playerSO: {fileID: 11400000, guid: e5297a4919426f14a8a0aff619a6abe1, type: 2}
   playerView: {fileID: 0}
 --- !u!4 &790602486
@@ -4731,6 +4741,7 @@ MonoBehaviour:
   PauseScreen: {fileID: 403208677}
   GameOverScreen: {fileID: 132474364}
   GameWonScreen: {fileID: 125739454}
+  LobbyScene: Lobby
   lastsceneint: 0
 --- !u!1001 &1550363056
 PrefabInstance:
