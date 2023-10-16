@@ -182,7 +182,8 @@ public class PlayerView : MonoBehaviour
     public void LevelCompleted()
     {
         levelManager.GameWon(); 
-        //SoundController.Instance.Play(Sounds.LevelFinished);
+        SoundController.Instance.Play(Sounds.LevelFinished);
+        LevelController.Instance.MarkCurrentLevelCompleted();
         this.enabled = false;
     }
 

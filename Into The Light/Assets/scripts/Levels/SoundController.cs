@@ -1,49 +1,32 @@
+using IntoTheLight.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundController : MonoBehaviour
+public class SoundController : MonoSingletonGeneric<SoundController>
 {
-    private static SoundController instance;
-    public static SoundController Instance { get { return instance; } }
-
     public Slider VolumeSlider;
     public AudioSource SoundEffect;
     public AudioSource SoundMusic;
-    [Range(0f, 1f)] public float userVolume;
     public float Volume = 1f;
-
     public SoundType[] Sounds;
 
-
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-    }
-  
     private void Start()
     {
-        SetVolume(userVolume);
         PlayMusic(global::Sounds.music);
         VolumeSlider.value = Volume;
+    }
+    private void Update()
+    {
+        SetVolume();
     }
     private void SetVolume()
     {
         SoundEffect.volume = VolumeSlider.value;
         SoundMusic.volume=VolumeSlider.value;
-      
+        Volume=VolumeSlider.value;  
     }
     public void SetVolume(float volume)
     {

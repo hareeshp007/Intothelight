@@ -44,16 +44,7 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadNextScene()
     {
-        int currScene = SceneManager.GetActiveScene().buildIndex;
-        if (currScene == lastsceneint)
-        {
-            SceneManager.LoadScene(LobbyScene);
-        }
-        else
-        {
-            SceneManager.LoadScene(currScene + 1);
-        }
-        
+        LevelController.Instance.LoadNextLevel();
     }
     public void LoadLobbyScene()
     {
