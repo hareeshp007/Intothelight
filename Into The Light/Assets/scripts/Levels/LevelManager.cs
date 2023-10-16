@@ -33,7 +33,6 @@ public class LevelManager : MonoBehaviour
     }
     public void Unpause()
     {
-        
         PauseScreen.SetActive(false);
         Time.timeScale = 1;
     }

@@ -18,15 +18,10 @@ public class SoundController : MonoSingletonGeneric<SoundController>
         PlayMusic(global::Sounds.music);
         VolumeSlider.value = Volume;
     }
-    private void Update()
+
+    public void SetVolumeSlider(Slider VolumeSlider)
     {
-        SetVolume();
-    }
-    private void SetVolume()
-    {
-        SoundEffect.volume = VolumeSlider.value;
-        SoundMusic.volume=VolumeSlider.value;
-        Volume=VolumeSlider.value;  
+        VolumeSlider.value = Volume;
     }
     public void SetVolume(float volume)
     {

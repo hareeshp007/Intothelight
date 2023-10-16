@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   speed: 5
-  JumpForce: 7
+  JumpForce: 6
   MaxExtraJumps: 1
-  healthDraining: 0.01
+  healthDraining: 0.05
   healthGaining: 0.1
   player: {fileID: 8655319727207801912, guid: 92b18b814f12f16409162c87262a8984, type: 3}

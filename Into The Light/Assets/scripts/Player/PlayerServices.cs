@@ -15,7 +15,7 @@ public class PlayerServices : MonoSingletonGeneric<PlayerServices>
     private PlayerController playerController;
     [SerializeField]
     private PlayerModel playerModel;
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         Debug.Log("Awake");
