@@ -36,7 +36,7 @@ public class PlayerController
     public void HealthDraining()
     {
         float Drain = _playerModel.healthDraining;
-        _playerModel.CurrentHealth -= Drain;
+        _playerModel.CurrentHealth -= Drain*Time.deltaTime;
     }
 
     public void HealUnderTheLight()
@@ -46,7 +46,7 @@ public class PlayerController
         float Gain = _playerModel.healthGaining;
         if (Health < Maxhealth)
         {
-            _playerModel.CurrentHealth += Gain;
+            _playerModel.CurrentHealth += Gain * Time.deltaTime;
         }
         
     }

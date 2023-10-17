@@ -16,6 +16,6 @@ MonoBehaviour:
   speed: 5
   JumpForce: 6
   MaxExtraJumps: 1
-  healthDraining: 0.05
-  healthGaining: 0.1
+  healthDraining: 15
+  healthGaining: 20
   player: {fileID: 8655319727207801912, guid: 92b18b814f12f16409162c87262a8984, type: 3}
