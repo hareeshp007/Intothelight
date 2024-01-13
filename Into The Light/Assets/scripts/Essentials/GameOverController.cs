@@ -10,7 +10,6 @@ public class GameOverController : MonoBehaviour
     public Button Restart;
     public Button Lobby;
     public string LobbyScene = "Lobby";
-    // Start is called before the first frame update
     void Start()
     {
         Restart= GetComponent<Button>();
@@ -21,13 +20,13 @@ public class GameOverController : MonoBehaviour
 
     private void LobbyButton()
     {
-        SoundController.Instance.Play(Sounds.ButtonClick);
+        GameService.Instance.SoundController.Play(Sounds.ButtonClick);
         SceneManager.LoadScene(LobbyScene);
     }
 
     private void restartButton()
     {
-        SoundController.Instance.Play(Sounds.ButtonClick);
+        GameService.Instance.SoundController.Play(Sounds.ButtonClick);
         int currScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currScene);
     }

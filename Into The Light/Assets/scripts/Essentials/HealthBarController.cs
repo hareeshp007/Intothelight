@@ -11,7 +11,7 @@ public class HealthBarController : MonoBehaviour
     public Image fill;
     private void Start()
     {
-        PlayerServices.Instance.SetHealthBar(this);
+        GameService.Instance.PlayerServices.SetHealthBar(this);
     }
     public void SetMaxHealth(float MaxHealth)
     {

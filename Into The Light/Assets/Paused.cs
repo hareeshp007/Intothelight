@@ -12,8 +12,8 @@ public class Paused : MonoBehaviour
     {
         Lobby=GetComponent<Button>();
         Restart=GetComponent<Button>();
-        Lobby.onClick.AddListener(LevelController.Instance.LoadLobbyScene);
-        Restart.onClick.AddListener(LevelController.Instance.Restart);
+        Lobby.onClick.AddListener(GameService.Instance.LevelController.LoadLobbyScene);
+        Restart.onClick.AddListener(GameService.Instance.LevelController.Restart);
     }
 
 }

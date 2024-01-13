@@ -12,11 +12,12 @@ public class LevelManager : MonoBehaviour
     private int lastsceneint;
     private void Start()
     {
-        PlayerServices.Instance.SetLevelManager(this);
+        Debug.Log("Level manager");
+        GameService.Instance.PlayerServices.SetLevelManager(this);
     }
     public void pause()
     {
-        SoundController.Instance.Play(Sounds.ButtonClick);
+        GameService.Instance.SoundController.Play(Sounds.ButtonClick);
         Time.timeScale = 0;
         PauseScreen.SetActive(true);
     }
@@ -43,10 +44,11 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadNextScene()
     {
-        LevelController.Instance.LoadNextLevel();
+        GameService.Instance.LevelController.LoadNextLevel();
     }
     public void LoadLobbyScene()
     {
         SceneManager.LoadScene(LobbyScene);
     }
+
 }

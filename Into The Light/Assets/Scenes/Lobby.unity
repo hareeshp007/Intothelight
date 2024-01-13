@@ -123,65 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &26935724
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 26935726}
-  - component: {fileID: 26935725}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &26935725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26935724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc7f42abc6ac604ca22d621e98be788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VolumeSlider: {fileID: 305311609}
-  SoundEffect: {fileID: 1834985490}
-  SoundMusic: {fileID: 601315329}
-  Volume: 1
-  Sounds:
-  - soundType: 0
-    soundclip: {fileID: 8300000, guid: 24d73765699ce3e46bb23cabc3a46494, type: 3}
-  - soundType: 1
-    soundclip: {fileID: 8300000, guid: 832aa39d4fbe053428a67083bb091a1a, type: 3}
-  - soundType: 3
-    soundclip: {fileID: 8300000, guid: 5ab8fc664ca4d604f820e255005a664a, type: 3}
-  - soundType: 2
-    soundclip: {fileID: 8300000, guid: 381122af961f9a4469352fbea3e14ea9, type: 3}
---- !u!4 &26935726
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26935724}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 592.19855, y: 259.35007, z: -0.1984781}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1834985491}
-  - {fileID: 601315330}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257491021
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,56 +810,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435431187}
   m_CullTransparentMesh: 1
---- !u!1 &473311052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 473311054}
-  - component: {fileID: 473311053}
-  m_Layer: 0
-  m_Name: LevelController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &473311053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473311052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb91c00166cdbb44eaffbad2530e380d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LobbyScene: Lobby
-  Levels:
-  - Level 1
-  - Level 2
-  - Level 3
-  - Level 4
---- !u!4 &473311054
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473311052}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.031398, y: 1.3923842, z: 0.007076879}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &482459383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,12 +1199,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601315328}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 166.19855, y: 19.850067, z: -0.1984781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 26935726}
+  m_Father: {fileID: 1059107943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &603340043
 PrefabInstance:
@@ -1632,7 +1523,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 473311053}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
@@ -2378,6 +2269,71 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1059107941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059107943}
+  - component: {fileID: 1059107942}
+  m_Layer: 0
+  m_Name: GameService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1059107942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059107941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374499b2623ee744abbb17331e32219e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSO: {fileID: 11400000, guid: e5297a4919426f14a8a0aff619a6abe1, type: 2}
+  VolumeSlider: {fileID: 305311609}
+  SoundEffect: {fileID: 1834985490}
+  SoundMusic: {fileID: 601315329}
+  Sounds:
+  - soundType: 0
+    soundclip: {fileID: 8300000, guid: 24d73765699ce3e46bb23cabc3a46494, type: 3}
+  - soundType: 1
+    soundclip: {fileID: 8300000, guid: 832aa39d4fbe053428a67083bb091a1a, type: 3}
+  - soundType: 3
+    soundclip: {fileID: 8300000, guid: 5ab8fc664ca4d604f820e255005a664a, type: 3}
+  - soundType: 2
+    soundclip: {fileID: 8300000, guid: 381122af961f9a4469352fbea3e14ea9, type: 3}
+  LobbyScene: Lobby
+  Levels:
+  - Level 1
+  - Level 2
+  - Level 3
+  - Level 4
+--- !u!4 &1059107943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059107941}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 426, y: 239.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1834985491}
+  - {fileID: 601315330}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1082885369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3594,12 +3550,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834985489}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 166.19855, y: 19.850067, z: -0.1984781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 26935726}
+  m_Father: {fileID: 1059107943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1840241816
 GameObject:
@@ -3700,7 +3656,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 473311053}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
@@ -3849,7 +3805,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 473311053}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
@@ -4073,7 +4029,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 473311053}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
@@ -4255,5 +4211,4 @@ SceneRoots:
   - {fileID: 2021950190}
   - {fileID: 603340043}
   - {fileID: 2100953048}
-  - {fileID: 473311054}
-  - {fileID: 26935726}
+  - {fileID: 1059107943}

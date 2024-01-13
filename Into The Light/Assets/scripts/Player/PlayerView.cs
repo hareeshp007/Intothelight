@@ -8,7 +8,6 @@ public class PlayerView : MonoBehaviour
     public LayerMask GroundLayerMask;
     public Animator Animator;
     
-
     public HealthBarController healthBarController;
 
     [SerializeField]
@@ -32,10 +31,7 @@ public class PlayerView : MonoBehaviour
     public void SetController(PlayerController playerController)
     {
         controller = playerController;
-
     }
-
-    
 
     private void Awake()
     {
@@ -43,7 +39,7 @@ public class PlayerView : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        PlayerServices.Instance.SetPlayer(this);
+        GameService.Instance.PlayerServices.SetPlayer(this);
     }
     // Start is called before the first frame update
     void Start()
@@ -169,7 +165,7 @@ public class PlayerView : MonoBehaviour
     public void Death()
     {
         Animator.SetBool("IsAlive", false);
-        //SoundController.Instance.Play(Sounds.PlayerDied);
+        //GameService.Instance.SoundController.Play(Sounds.PlayerDied);
         Debug.Log("Player has Died");
     }
 
@@ -182,8 +178,8 @@ public class PlayerView : MonoBehaviour
     public void LevelCompleted()
     {
         levelManager.GameWon(); 
-        SoundController.Instance.Play(Sounds.LevelFinished);
-        LevelController.Instance.MarkCurrentLevelCompleted();
+        GameService.Instance.SoundController.Play(Sounds.LevelFinished);
+        GameService.Instance.LevelController.MarkCurrentLevelCompleted();
         this.enabled = false;
     }
 

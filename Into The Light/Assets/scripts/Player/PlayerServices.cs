@@ -8,28 +8,25 @@ public class PlayerServices : MonoSingletonGeneric<PlayerServices>
 {
     private HealthBarController HealthBar;
     private LevelManager levelManager;
-    public PlayerSO playerSO;
+    private PlayerSO playerSO;
     [SerializeField]
     private PlayerView playerView;
     [SerializeField]
     private PlayerController playerController;
     [SerializeField]
     private PlayerModel playerModel;
-    protected override void Awake()
+    public PlayerServices (PlayerSO playerSO)
     {
-        base.Awake();
-        Debug.Log("Awake");
-        CreatePlayer();
+        Debug.Log("Player connected");
+        this.playerSO = playerSO;
+       
     }
 
     private void CreatePlayer()
     {
-        if (playerView == null)
-        {
             this.playerView = GameObject.Instantiate<PlayerView>(playerSO.player);
-        }
-        this.playerController = new PlayerController(playerSO,playerView);
-        SetPlayer();
+            this.playerController = new PlayerController(playerSO, playerView);
+            SetPlayer();
     }
     private void SetPlayer()
     {
@@ -41,7 +38,7 @@ public class PlayerServices : MonoSingletonGeneric<PlayerServices>
         {
             playerView.SetLevelManager(levelManager);
         }
-        
+
         Debug.Log("HealthController connected");
     }
     public void SetLevelManager(LevelManager _levelManager)
@@ -56,6 +53,10 @@ public class PlayerServices : MonoSingletonGeneric<PlayerServices>
     }
     private void CheckPlayer()
     {
+        if (playerView == null)
+        {
+            CreatePlayer();
+        }
         if (playerView != null)
         {
             SetPlayer();

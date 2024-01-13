@@ -17,21 +17,21 @@ public class LevelSelection : MonoBehaviour
     private void LevelSelect()
     {
 
-        LevelStatus levelStatus = LevelController.Instance.GetLevelStatus(LevelName);
+        LevelStatus levelStatus = GameService.Instance.LevelController.GetLevelStatus(LevelName);
         switch (levelStatus)
         {
             case LevelStatus.locked:
                 Debug.Log(Levelnum + " This Level is Locked:");
                 break;
             case LevelStatus.unlocked:
-                SoundController.Instance.Play(Sounds.ButtonClick);
+                GameService.Instance.SoundController.Play(Sounds.ButtonClick);
                 Debug.Log(Levelnum + " This Level is Unlocked:");
-                LevelController.Instance.LoadAnyLevel(Levelnum);
+                GameService.Instance.LevelController.LoadAnyLevel(Levelnum);
                 break;
             case LevelStatus.completed:
-                SoundController.Instance.Play(Sounds.ButtonClick);
+                GameService.Instance.SoundController.Play(Sounds.ButtonClick);
                 Debug.Log(Levelnum + " This Level is Completed:");
-                LevelController.Instance.LoadAnyLevel(Levelnum);
+                GameService.Instance.LevelController.LoadAnyLevel(Levelnum);
                 break;
         }
 

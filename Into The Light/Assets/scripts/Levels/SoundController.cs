@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundController : MonoSingletonGeneric<SoundController>
+public class SoundController
 {
     public Slider VolumeSlider;
     public AudioSource SoundEffect;
@@ -13,16 +13,21 @@ public class SoundController : MonoSingletonGeneric<SoundController>
     public float Volume = 1f;
     public SoundType[] Sounds;
 
-    private void Start()
+    public  SoundController(Slider VolumeSlider,
+        AudioSource SoundEffect,
+        AudioSource SoundMusic,
+        SoundType[] Sounds)
     {
+        this.VolumeSlider = VolumeSlider;
+        this.SoundEffect = SoundEffect;
+        this.SoundMusic = SoundMusic;
+        this.Sounds = Sounds;
         PlayMusic(global::Sounds.music);
-        VolumeSlider.value = Volume;
+        Volume= VolumeSlider.value;
+        SetVolume(Volume);
     }
 
-    public void SetVolumeSlider(Slider VolumeSlider)
-    {
-        VolumeSlider.value = Volume;
-    }
+    
     public void SetVolume(float volume)
     {
         Volume = volume;

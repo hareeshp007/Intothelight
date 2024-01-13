@@ -6,25 +6,23 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     public GameObject LevelMenu;
-    public Slider MusicVolumeSlider;
     private void Start()
     {
         LevelMenu.SetActive(false);
-        SetSliderValueMusic();
     }
     public void MenuLevel()
     {
-        SoundController.Instance.Play(Sounds.ButtonClick);
+        GameService.Instance.SoundController.Play(Sounds.ButtonClick);
         LevelMenu.gameObject.SetActive(true);
     }
     public void exit()
     {
-        SoundController.Instance.Play(Sounds.ButtonClick);
+        GameService.Instance.SoundController.Play(Sounds.ButtonClick);
         Application.Quit();
     }
     public void LevelReset()
     {
-        LevelController.Instance.LevelReset();
+        GameService.Instance.LevelController.LevelReset();
     }
     public void MainMenu()
     {
@@ -32,10 +30,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void ChangeSoundVolume(Slider slider)
     {
-        SoundController.Instance.SetVolume(slider.value);
+        GameService.Instance.SoundController.SetVolume(slider.value);
     }
-    public void SetSliderValueMusic()
-    {
-        SoundController.Instance.SetVolumeSlider(MusicVolumeSlider);
-    }
+    
 }
